@@ -1,8 +1,8 @@
 var app = angular.module('FruitsVeggies', []);
 
 app.controller('produceCtrl',['$scope', function($scope) {
-	$scope.fruit = []
-	$scope.vegetables = []
+	$scope.fruit = [];
+	$scope.vegetables = [];
 	$scope.pool = fruit.concat(vegetables);
 
 
@@ -50,7 +50,7 @@ app.controller('produceCtrl',['$scope', function($scope) {
 		if($scope.pool.length === 0) {
 			console.log($scope.fruit, item, fruit);
 			if(JSON.stringify($scope.fruit.slice().sort()) === JSON.stringify(fruit)) {
-				alert('You answered them right, bitch')
+				alert('You answered them right')
 			}
 		}
 	}
