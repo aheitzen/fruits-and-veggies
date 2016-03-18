@@ -9,19 +9,35 @@
         <script src="js/fruit_and_veggies_test.js"></script>
         <script src="js/app.js"></script>
     </head>
-    <body>
+    <body ng-app="FruitsVeggies" id="opacity">
         <div class="container">
             <h1>Fruit and Veggies</h1>
-            <div class="row">
-                <div class="col-sm-4">
-                    col 1
+            <div ng-controller="produceCtrl">
+                <div class="row">
+                    <div class="col-sm-4">
+                        Fruit
+                        <div ng-repeat="item in fruit track by $index" ng-class="colorChanger(item)" class="well">
+                            {{item}}
+                             <button ng-click="rightArrow($index, item)" class="btn btn-primary"></button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        Pool
+                        <div ng-repeat="item in pool track by $index" class="well">
+                            <button ng-click="leftArrow($index, item)" class="btn btn-primary"></button>
+                                {{item}}
+                            <button ng-click="rightArrow($index, item)" class="btn btn-primary"></button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        vegetables
+                        <div ng-repeat="item in vegetables track by $index" ng-class="colorChanger" class="well">
+                        <button ng-click="leftArrow($index, item)" class="btn btn-primary"></button>
+                            {{item}}
+                        </div>
+                        <div id="container"></div>
+                    </div>                        
                 </div>
-                <div class="col-sm-4">
-                    col 2
-                </div>
-                <div class="col-sm-4">
-                    col 3
-                </div>                        
             </div>
         </div>
     </body>
